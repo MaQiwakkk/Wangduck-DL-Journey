@@ -9,7 +9,7 @@ tensor_img = tensor_trans(img)
 # print(tensor_img.shape)
 # print(tensor_img[0][0][0])
 
-writer = SummaryWriter("logs")
+writer = SummaryWriter("logs_P9")
 writer.add_image("tensor_img", tensor_img)
 writer.close()
 # tensorboard --logdir=logs

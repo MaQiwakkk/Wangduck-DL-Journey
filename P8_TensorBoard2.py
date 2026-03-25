@@ -4,7 +4,7 @@ from PIL import Image
 
 # add_image()函数的使用
 
-writer = SummaryWriter("logs")
+writer = SummaryWriter("logs_P8")
 image_path = "dataset2/train/ants_image/0013035.jpg"
 img_PIL = Image.open(image_path)
 img_array = np.array(img_PIL)

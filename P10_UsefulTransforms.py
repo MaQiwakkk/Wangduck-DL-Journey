@@ -3,7 +3,7 @@ from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
 
 img = Image.open("bin.jpg")
-writer = SummaryWriter("logs")
+writer = SummaryWriter("logs_P10")
 
 # ToTensor
 trans_totensor = transforms.ToTensor()
