@@ -31,6 +31,6 @@ input = torch.ones((64, 3, 32, 32))
 output = mymodule(input)
 print(output.shape)
 
-writer = SummaryWriter("P22_logs")
+writer = SummaryWriter("logs_P22")
 writer.add_graph(mymodule, input)
 writer.close()
