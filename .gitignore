@@ -6,3 +6,4 @@ torchvision_dataset/
 *.tar.gz
 logs_*/
 .DS_Store
+*.pth
