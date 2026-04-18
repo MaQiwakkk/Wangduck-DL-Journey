@@ -5,5 +5,8 @@ dataset2/
 torchvision_dataset/
 *.tar.gz
 logs_*/
+logs/
 .DS_Store
 *.pth
+crack_segmentation_dataset/
+model_weights/
