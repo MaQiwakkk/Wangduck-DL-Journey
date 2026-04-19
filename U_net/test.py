@@ -28,7 +28,7 @@ def test():
     # 1. 初始化 TensorBoard 和路径
     writer = SummaryWriter('./logs')
     test_data_path = './crack_segmentation_dataset/test'
-    weight_path = './model_weights/unet_epoch_2.pth'  # 请确保权重文件存在
+    weight_path = './model_weights/unet_epoch_20.pth'  # 请确保权重文件存在
 
     # 2. 加载数据与模型
     dataset = MyDataset(test_data_path)

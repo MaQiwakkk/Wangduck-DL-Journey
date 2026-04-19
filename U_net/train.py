@@ -27,6 +27,17 @@ def train():
     # 4. 初始化网络 (二分类问题，num_classes=2)
     net = UNet(num_classes=2).to(device)
 
+    # 断点训练，设定要从第几轮的权重开始续训
+    resume_epoch = 6
+    resume_weight_path = os.path.join(weight_save_path, f'unet_epoch_{resume_epoch}.pth')
+
+    if resume_epoch > 0 and os.path.exists(resume_weight_path):
+        net.load_state_dict(torch.load(resume_weight_path, map_location=device))
+        print(f"成功加载第 {resume_epoch} 轮的权重，将从第 {resume_epoch + 1} 轮开始继续训练！")
+    else:
+        print("未找到指定权重或设为从头训练，初始化全新网络...")
+        resume_epoch = 0  # 如果没找到，强制从0开始
+
     # 5. 定义优化器和损失函数
     optimizer = optim.Adam(net.parameters(), lr=1e-4)
     # 多分类/二分类标准损失函数：交叉熵
@@ -34,7 +45,7 @@ def train():
 
     # 6. 开始训练
     epochs = 20
-    for epoch in range(epochs):
+    for epoch in range(resume_epoch, epochs):
         net.train()
         epoch_loss = 0
 
