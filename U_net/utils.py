@@ -16,5 +16,5 @@ def keep_image_size_open_rgb(path, size=(256, 256)):
     mask = mask.resize(size)
     return mask
 if __name__ == '__main__':
-    result = keep_image_size_open_rgb("../bin.jpg")
+    result = keep_image_size_open_rgb("../Tudui/bin.jpg")
     result.show()

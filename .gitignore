@@ -10,3 +10,4 @@ logs/
 *.pth
 crack_segmentation_dataset/
 model_weights/
+.vscode/
